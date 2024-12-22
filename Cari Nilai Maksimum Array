@@ -1,0 +1,21 @@
+public class NilaiMax {
+
+    public static int findMax(int[] arr, int n) {
+        if (n == 1) {
+            return arr[0]; 
+        }
+        
+        int maxInRest = findMax(arr, n - 1);
+        
+        if (arr[n - 1] > maxInRest) {
+            return arr[n - 1]; 
+        } else {
+            return maxInRest;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 9, 3, 7, 11};
+        System.out.println("Nilai maksimum dalam array adalah: " + findMax(arr, arr.length));
+    }
+}
